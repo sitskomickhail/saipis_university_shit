@@ -1,0 +1,37 @@
+td {
+    border: 1px solid black;
+    width: 15%;
+}
+
+ol.bracket {
+    list-style-type: none;
+    counter-reset: item;
+}
+
+.bracket:before {
+    counter-increment: item;
+    margin-left: -59px;
+}
+
+.bracket.numeric:before {
+    content: counter(item) ') ';
+}
+
+.bracket.alpha:before {
+    content: counter(item, lower-alpha) ') ';
+}
+
+li.linear-list {
+    margin-left: -44px;
+}
+
+
+li > ol > li {
+    font-weight: normal;
+}
+
+.text1 {
+    font-style: italic;
+    color: #043C6B;
+    text-decoration: underline;
+}
