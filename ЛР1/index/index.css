@@ -35,3 +35,24 @@ li > ol > li {
     color: #043C6B;
     text-decoration: underline;
 }
+
+.text2 {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.text3 {
+    font-stretch: condensed;
+    font-size: large;
+    color: #04ff8a;
+}
+
+.text4 {
+    font-stretch: condensed;
+    color: rgb(123, 222, 200);
+}
+
+.text5 {
+    font-family: Impact, fantasy;
+    color: #1D1AB2;
+}
