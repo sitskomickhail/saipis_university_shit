@@ -94,6 +94,8 @@ a:hover.fixedLink {
     z-index: 5;
     margin: 10% 8%;
     letter-spacing: 10px;
+
+    animation: blink-animation 1s steps(5, start) infinite;
 }
 
 .bookmark {
@@ -157,5 +159,11 @@ a:hover.fixedLink {
     .maldives-text {
         font-size: 45px;
         letter-spacing: 5px;
+    }
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
     }
 }
