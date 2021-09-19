@@ -1,0 +1,96 @@
+@font-face {
+    font-family: GreyQo;
+    src: url(../fonts/GreyQo-Regular.ttf);
+}
+
+.cardBackground {
+    padding: 20px;
+
+    background: radial-gradient(at top right, #E4E4DA, #eaeae6);
+    margin: 0 10%;
+    min-width: 550px;
+
+    border-radius: 15px;
+    box-shadow: -15px 10px 15px #d0d0ca;
+
+    border-top-left-radius: 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 75%;
+    margin: auto;
+}
+
+th, td {
+    width: auto;
+    text-align: center;
+
+    min-width: 80px;
+}
+
+tr:hover > th,
+tr:hover > td {
+    background-color: #27B1C6;
+}
+
+.islandCol {
+    background-color: #e4e4da;
+}
+
+.hotelCol {
+    background-color: #f3f3df;
+}
+
+.ratingCol {
+    background-color: #E4E4DA;
+}
+
+.costCol {
+    background-color: #f3f3df;
+}
+
+.tab-header {
+    margin: 0 10%;
+
+    width: 270px;
+    height: 70px;
+    background-color: #eaeae6;
+
+    border-radius: 15px;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    box-shadow: -15px 10px 15px #d0d0ca;
+}
+
+.headerText {
+    font-size: 40px;
+    text-align: center;
+
+    letter-spacing: 5px;
+}
+
+.headerText:first-letter {
+    font-size: 60px;
+    font-family: GreyQo;
+}
+
+.headerImage {
+    width: 880px;
+    height: 60px;
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.image-header {
+    border-radius: 15px;
+    margin-left: 90px;
+    box-shadow: -10px 10px 15px
+}
+
+h1 {
+    color: #27B1C6;
+}

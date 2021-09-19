@@ -1,0 +1,161 @@
+@font-face {
+    font-family: GreyQo;
+    src: url(../fonts/GreyQo-Regular.ttf);
+}
+
+p:first-letter {
+    font-size: 64px;
+    font-weight: bold;
+    color: #55732A;
+
+    font-family: GreyQo;
+}
+
+#paragraph_one:after {
+    content: url("../resources/beach_icon_1.jpg");
+    height: 40px;
+}
+
+#paragraph_two:after {
+    content: url("../resources/beach_icon_2.jpg");
+    height: 40px;
+}
+
+#paragraph_three:after {
+    content: url("../resources/beach_icon_3.jpg");
+    height: 40px;
+}
+
+.bookmark-container {
+    position: relative;
+    left: -1px;
+    top: -1px;
+}
+
+.fixedLink {
+    position: relative;
+
+    background-color: #55732A;
+
+    margin: 3px 3%;
+    text-align: center;
+}
+
+.anchorLink {
+    color: #213113;
+    text-decoration: none;
+}
+
+.anchorLink:hover {
+    color: #101609;
+    text-decoration: underline;
+}
+
+a:hover.fixedLink {
+    background-color: #213113;
+}
+
+.pageBorder {
+    border: 15px solid #27B1C6;
+    margin: 0 3%;
+    min-width: 550px;
+}
+
+.rhomb-container {
+    margin-left: 27%;
+
+    min-width: 550px;
+}
+
+.rhomb {
+    width: 180px;
+    height: 180px;
+    background-color: #E4E4DA;
+
+    transform: rotate(45deg);
+    border: 10px solid #E4E4DA;
+    position: relative;
+    display: inline-block;
+    margin: 10% 0;
+    box-shadow: 5px 10px 15px #c1c1bc;
+
+    font-size: 34px;
+    font-weight: bold;
+    text-align: right;
+    color: #27B1C6;
+}
+
+.maldives-text {
+    display: inline-block;
+    position: absolute;
+    color: #09869b;
+
+    font-size: 75px;
+    z-index: 5;
+    margin: 10% 8%;
+    letter-spacing: 10px;
+}
+
+.bookmark {
+    background-color: #27B1C6;
+    margin: 0;
+
+    display: table-cell;
+
+    color: #E4E4DA;
+    font-size: 38px;
+    text-align: center;
+}
+
+.bookmark.tab {
+    height: 50px;
+    width: 200px;
+}
+
+.bookmark.corner {
+    margin: 0;
+
+    border: 25px solid white;
+    border-left-color: #27B1C6;
+    border-top-color: #27B1C6;
+}
+
+@media screen and (max-width: 1200px) {
+    .rhomb {
+        width: 140px;
+        height: 140px;
+        background-color: #E4E4DA;
+
+        transform: rotate(45deg);
+        border: 7px solid #E4E4DA;
+        margin: 10% 0;
+        box-shadow: 3px 7px 15px #c1c1bc;
+
+        font-size: 28px;
+    }
+
+    .maldives-text {
+        font-size: 60px;
+        letter-spacing: 8px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .rhomb {
+        width: 100px;
+        height: 100px;
+        background-color: #E4E4DA;
+
+        transform: rotate(45deg);
+        border: 5px solid #E4E4DA;
+        margin: 10% 0;
+        box-shadow: 2px 5px 15px #c1c1bc;
+
+        font-size: 24px;
+    }
+
+    .maldives-text {
+        font-size: 45px;
+        letter-spacing: 5px;
+    }
+}
