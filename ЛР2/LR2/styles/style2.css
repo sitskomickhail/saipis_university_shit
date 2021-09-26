@@ -9,7 +9,7 @@
     padding: 20px;
 
     background: radial-gradient(at top right, #E4E4DA, #eaeae6);
-    margin: 0 10%;
+    margin: 0 3%;
     min-width: 550px;
 
     border-radius: 15px;
@@ -58,7 +58,7 @@ tr:hover > td {
     display: flex;
     padding: 0 30px;
 
-    margin-left: 10%;
+    margin-left: 3%;
 
     width: 270px;
     height: 70px;
@@ -98,7 +98,7 @@ tr:hover > td {
 .image-header {
 
     margin-left: 9px;
-    margin-right: 10%;
+    margin-right: 3%;
 
     border-radius: 15px;
 
