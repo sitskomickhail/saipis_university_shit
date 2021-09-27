@@ -8,7 +8,7 @@
 <body>
 <header>
     <p class="logo-label">Computer</p>
-    <img src="../resources/images/pc_logo.png" alt="ПК" class=""/>
+    <img src="../resources/images/pc_logo.png" alt="ПК" class="topLogo"/>
     <p class="logo-label">Magazine</p>
 </header>
 <div class="main-content">
@@ -16,15 +16,88 @@
     <article>
         <div class="bg-image">
             <div class="glass-form">
-                <form class="computerForm">
-                    <fieldset>
-                        <legend>Комплектация компьютера</legend>
-                        <input type="text" placeholder="Модель"/>
-                        <input type="text" placeholder="Модель"/>
-                        <input type="text" placeholder="Модель"/>
-                        <input type="text" placeholder="Модель"/>
-                        <input type="text" placeholder="Модель"/>
+                <form class="computerForm" id="requestForm">
+                    <input type="hidden" id="requestId">
+                    <h1 class="formTitle">Select configuration</h1>
+
+                    <label for="colorSet">Цвет корпуса</label>
+                    <select id="colorSet" class="colorSet" required>
+                        <option value="Черный">Черный</option>
+                        <option value="Белый">Белый</option>
+                        <option value="Серый">Серый</option>
+                    </select>
+
+                    <fieldset class="computerType">
+                        <legend>Тип комьютера</legend>
+
+                        <div class="type-element">
+                            <input type="radio" id="classic" name="typePC" required/>
+                            <label for="classic">Классический</label>
+                        </div>
+
+                        <div class="type-element">
+                            <input type="radio" id="gaming" name="typePC"/>
+                            <label for="gaming">Игровой</label>
+                        </div>
+
+                        <div class="type-element">
+                            <input type="radio" id="office" name="typePC"/>
+                            <label for="office">Для работы</label>
+                        </div>
+
+                        <div class="type-element">
+                            <input type="radio" id="universal" name="typePC"/>
+                            <label for="universal">Универсальный</label>
+                        </div>
                     </fieldset>
+
+                    <fieldset class="configurationArea">
+                        <legend>Выберите приблизительно подходящие вам конфигурации</legend>
+                        <div class="pcConfiguration">
+                            <input type="checkbox" name="pcConfiguration" id="val1"
+                                   value="Windows 10, Intel Core i7, Nvidia 1080TI, SSD 1024gb"/>
+                            <label for="val1">Windows 10, Intel Core i7, Nvidia 1080TI, SSD 1024gb</label>
+                        </div>
+
+                        <div class="pcConfiguration">
+                            <input type="checkbox" name="pcConfiguration" id="val2"
+                                   value="Windows 7, Intel Core i5, Nvidia 1080TI, HDD 512gb + SSD 512gb"/>
+                            <label for="val2">Windows 7, Intel Core i5, Nvidia 1080TI, HDD 512gb + SSD 512gb</label>
+                        </div>
+
+                        <div class="pcConfiguration">
+                            <input type="checkbox" name="pcConfiguration" id="val3"
+                                   value="Linux, Intel Core i7, Nvidia 920M, HDD 256gb"/>
+                            <label for="val3">Linux, Intel Core i7, Nvidia 920M, HDD 256gb</label>
+                        </div>
+
+                        <div class="pcConfiguration">
+                            <input type="checkbox" name="pcConfiguration" id="val4"
+                                   value="Windows 10, Intel Core i5, Nvidia 1920-M, HDD 512gb"/>
+                            <label for="val4">Windows 10, Intel Core i5, Nvidia 1920-M, HDD 512gb</label>
+                        </div>
+
+                        <div class="pcConfiguration">
+                            <input type="checkbox" name="pcConfiguration" id="val5"
+                                   value="Windows 7, Intel Core i7, Nvidia 1080TI, SSD 256"/>
+                            <label for="val5">Windows 7, Intel Core i7, Nvidia 1080TI, SSD 256</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="contactArea">
+                        <legend>Оставьте ваши контакты, по которым мы можем связаться с вами</legend>
+                        <div class="contacts">
+                            <input type="email" id="email" placeholder="Email-адресс" required/>
+                            <input type="text" id="phoneNumber" placeholder="+375 (XX) ..." required/>
+                        </div>
+
+                        <textarea class="wishesArea"
+                                  placeholder="Оставьте свои пожелания. Мы учтем их во время обработки запроса"
+                                  rows="8"
+                                  id="clientWishes"></textarea>
+                    </fieldset>
+
+                    <button class="submitButton" type="submit">Подтвердить</button>
                 </form>
             </div>
         </div>
@@ -35,4 +108,39 @@
     © created by Mikhail Sitsko
 </footer>
 </body>
+
+<script>
+
+    document.getElementById("requestForm").addEventListener("submit", a => handleForm(a));
+
+    function handleForm(a) {
+        a.preventDefault();
+
+        const requestId = document.getElementById("requestId").value;
+        console.log(requestId);
+        const colorSet = document.getElementById("colorSet").value;
+        console.log(colorSet)
+
+        let checkedElement = null;
+        document.getElementsByName("typePC").forEach(node => {
+            if (document.getElementById(node.id).value === 'on') {
+                checkedElement = node;
+            }
+        })
+        console.log(checkedElement)
+
+        const clientWishes = document.getElementById("clientWishes").value;
+        console.log(clientWishes);
+
+        const email = document.getElementById("email").value;
+        console.log(email);
+
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        console.log(phoneNumber)
+
+        console.log(a);
+    }
+
+</script>
+
 </html>
