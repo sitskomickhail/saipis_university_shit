@@ -12,7 +12,11 @@
     <p class="logo-label">Magazine</p>
 </header>
 <div class="main-content">
-    <nav></nav>
+    <nav>
+        <a href="index.html" id="mainList">> Главная</a>
+        <br/>
+        <a href="index2.html" id="resultsList">Сводка</a>
+    </nav>
     <article>
         <div class="bg-image">
             <div class="glass-form">
@@ -31,53 +35,53 @@
                         <legend>Тип комьютера</legend>
 
                         <div class="type-element">
-                            <input type="radio" id="classic" name="typePC" required/>
+                            <input type="radio" id="classic" name="typePC" value="Классический" required/>
                             <label for="classic">Классический</label>
                         </div>
 
                         <div class="type-element">
-                            <input type="radio" id="gaming" name="typePC"/>
+                            <input type="radio" id="gaming" name="typePC" value="Игровой"/>
                             <label for="gaming">Игровой</label>
                         </div>
 
                         <div class="type-element">
-                            <input type="radio" id="office" name="typePC"/>
+                            <input type="radio" id="office" name="typePC" value="Для работы"/>
                             <label for="office">Для работы</label>
                         </div>
 
                         <div class="type-element">
-                            <input type="radio" id="universal" name="typePC"/>
+                            <input type="radio" id="universal" name="typePC" value="Универсальный"/>
                             <label for="universal">Универсальный</label>
                         </div>
                     </fieldset>
 
                     <fieldset class="configurationArea">
                         <legend>Выберите приблизительно подходящие вам конфигурации</legend>
-                        <div class="pcConfiguration">
+                        <div>
                             <input type="checkbox" name="pcConfiguration" id="val1"
                                    value="Windows 10, Intel Core i7, Nvidia 1080TI, SSD 1024gb"/>
                             <label for="val1">Windows 10, Intel Core i7, Nvidia 1080TI, SSD 1024gb</label>
                         </div>
 
-                        <div class="pcConfiguration">
+                        <div>
                             <input type="checkbox" name="pcConfiguration" id="val2"
                                    value="Windows 7, Intel Core i5, Nvidia 1080TI, HDD 512gb + SSD 512gb"/>
                             <label for="val2">Windows 7, Intel Core i5, Nvidia 1080TI, HDD 512gb + SSD 512gb</label>
                         </div>
 
-                        <div class="pcConfiguration">
+                        <div>
                             <input type="checkbox" name="pcConfiguration" id="val3"
                                    value="Linux, Intel Core i7, Nvidia 920M, HDD 256gb"/>
                             <label for="val3">Linux, Intel Core i7, Nvidia 920M, HDD 256gb</label>
                         </div>
 
-                        <div class="pcConfiguration">
+                        <div>
                             <input type="checkbox" name="pcConfiguration" id="val4"
                                    value="Windows 10, Intel Core i5, Nvidia 1920-M, HDD 512gb"/>
                             <label for="val4">Windows 10, Intel Core i5, Nvidia 1920-M, HDD 512gb</label>
                         </div>
 
-                        <div class="pcConfiguration">
+                        <div>
                             <input type="checkbox" name="pcConfiguration" id="val5"
                                    value="Windows 7, Intel Core i7, Nvidia 1080TI, SSD 256"/>
                             <label for="val5">Windows 7, Intel Core i7, Nvidia 1080TI, SSD 256</label>
@@ -86,13 +90,14 @@
 
                     <fieldset class="contactArea">
                         <legend>Оставьте ваши контакты, по которым мы можем связаться с вами</legend>
+                        <input type="text" id="username" placeholder="Ваше имя" class="nameInput" required/>
+
                         <div class="contacts">
                             <input type="email" id="email" placeholder="Email-адресс" required/>
                             <input type="text" id="phoneNumber" placeholder="+375 (XX) ..." required/>
                         </div>
 
-                        <textarea class="wishesArea"
-                                  placeholder="Оставьте свои пожелания. Мы учтем их во время обработки запроса"
+                        <textarea placeholder="Оставьте свои пожелания. Мы учтем их во время обработки запроса"
                                   rows="8"
                                   id="clientWishes"></textarea>
                     </fieldset>
@@ -111,34 +116,68 @@
 
 <script>
 
+    function uuidv4() {
+        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+    }
+
+    document.getElementById("requestId").value = uuidv4();
+
     document.getElementById("requestForm").addEventListener("submit", a => handleForm(a));
 
     function handleForm(a) {
         a.preventDefault();
 
+        const phoneNumber = document.getElementById("phoneNumber").value;
+
+        if (!phoneNumber.match("^[0-9\\-\\+]{9,15}$")) {
+            alert("Некорректный ввод номера телефона (пример: +375331112233)")
+            return;
+        }
+
         const requestId = document.getElementById("requestId").value;
-        console.log(requestId);
         const colorSet = document.getElementById("colorSet").value;
-        console.log(colorSet)
 
         let checkedElement = null;
         document.getElementsByName("typePC").forEach(node => {
-            if (document.getElementById(node.id).value === 'on') {
-                checkedElement = node;
+            if (node.checked === true) {
+                checkedElement = node.value;
             }
-        })
-        console.log(checkedElement)
+        });
+
+        let checkedConfigurations = [];
+        document.getElementsByName("pcConfiguration").forEach(checkbox => {
+            if (checkbox.checked === true) {
+                checkedConfigurations.push(checkbox.value);
+            }
+        });
 
         const clientWishes = document.getElementById("clientWishes").value;
-        console.log(clientWishes);
-
         const email = document.getElementById("email").value;
-        console.log(email);
+        const username = document.getElementById("username").value;
 
-        const phoneNumber = document.getElementById("phoneNumber").value;
-        console.log(phoneNumber)
+        let storedRequests = localStorage.getItem("RequestValue");
+        if (!storedRequests) {
+            storedRequests = [];
+        } else {
+            storedRequests = JSON.parse(storedRequests);
+        }
 
-        console.log(a);
+        storedRequests.push({
+            requestId: requestId,
+            color: colorSet,
+            checkedType: checkedElement,
+            checkedConfigurations: checkedConfigurations,
+            clientName: username,
+            clientMail: email,
+            clientPhone: phoneNumber,
+            clientWishes: clientWishes
+        });
+
+        localStorage.setItem("RequestValue", JSON.stringify(storedRequests));
+
+        document.getElementById("resultsList").click();
     }
 
 </script>

@@ -32,7 +32,6 @@ footer {
 }
 
 .main-content {
-    height: 81%;
     display: flex;
     flex-direction: row;
 }
@@ -172,8 +171,8 @@ aside {
     width: 49%;
 }
 
-.wishesArea {
-
+.nameInput {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 900px) {
@@ -189,4 +188,13 @@ aside {
     color: white;
     font-size: 18px;
     background-color: #2f6946;
+}
+
+table, th, tr, td {
+    border: 1px solid black;
+    border-spacing: 1px;
+}
+
+.tableRequests {
+    padding: 0;
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LR-3</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <p class="logo-label">Computer</p>
+    <img src="../resources/images/pc_logo.png" alt="ПК" class="topLogo"/>
+    <p class="logo-label">Magazine</p>
+</header>
+<div class="main-content" style="height: 81%">
+    <nav>
+        <a href="index.html" id="mainList">Главная</a>
+        <br/>
+        <a href="index2.html" id="resultsList">> Сводка</a>
+    </nav>
+    <article>
+        <div class="bg-image">
+            <div class="glass-form">
+                <table id="resultsTable" class="tableRequests">
+                    <tr>
+                        <th>Request Id</th>
+                        <th>Имя</th>
+                        <th>Почта</th>
+                        <th>Номер телефона</th>
+                        <th>Цвет ПК</th>
+                        <th>Тип</th>
+                        <th>Конфигурации</th>
+                        <th>Пожелания</th>
+                    </tr>
+                </table>
+                <ul id="clientsList">
+
+                </ul>
+            </div>
+        </div>
+    </article>
+    <aside></aside>
+</div>
+<footer>
+    © created by Mikhail Sitsko
+</footer>
+</body>
+
+<script>
+
+    const requests = JSON.parse(localStorage.getItem("RequestValue"));
+    console.log(requests);
+
+    function FillCell(newRow, cellIndex, cellValue) {
+        var rowCell = newRow.insertCell(cellIndex);
+        var cellText = document.createTextNode(cellValue);
+        rowCell.appendChild(cellText);
+    }
+
+    let index = 1;
+    var requestsTable = document.getElementById("resultsTable");
+
+    requests.forEach(req => {
+        var newRow = requestsTable.insertRow(index++);
+
+        FillCell(newRow, 0, req.requestId);
+        FillCell(newRow, 1, req.clientName);
+        FillCell(newRow, 2, req.clientMail);
+        FillCell(newRow, 3, req.clientPhone);
+        FillCell(newRow, 4, req.color);
+        FillCell(newRow, 5, req.checkedType);
+        FillCell(newRow, 6, req.checkedConfigurations);
+        FillCell(newRow, 7, req.clientWishes);
+
+        var ul = document.getElementById("clientsList");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(req.clientName));
+        ul.appendChild(li);
+    });
+
+</script>
+
+</html>
