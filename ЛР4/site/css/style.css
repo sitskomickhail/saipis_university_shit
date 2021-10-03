@@ -1,0 +1,132 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+#bgArea {
+    left: -25%;
+    top: -50%;
+
+    height: 250%;
+    width: 150%;
+
+    position: fixed;
+    z-index: -1;
+}
+
+#rotatingBackground {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(ellipse at top, #4585ea, transparent), radial-gradient(ellipse at bottom, #e66465, transparent), radial-gradient(ellipse at right, #ffd12c, transparent), radial-gradient(ellipse at left, #a033ec, transparent);
+
+    animation: rotatingBackground 100s infinite linear;
+}
+
+
+@-webkit-keyframes rotatingBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.container {
+    width: 70%;
+    height: 50%;
+    margin-top: 10%;
+    display: flex;
+    /*background-color: #fafaf2;*/
+    background-color: rgba(250, 250, 242, .5);
+
+    border-radius: 20px;
+    justify-content: normal;
+}
+
+#mainArea {
+    padding: 8px;
+    margin-top: 70px;
+    margin-left: 10px;
+    width: 50%;
+    justify-content: left;
+    display: flex;
+
+    flex-direction: column;
+}
+
+.col-sep > form {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+select, input {
+    min-width: 190px;
+}
+
+.row-sep {
+    margin-top: 30px;
+
+    display: flex;
+    width: 100%;
+}
+
+.row-sep > button {
+    width: 100%;
+}
+
+button {
+    height: 35px;
+    min-width: 130px;
+    font-size: 18px;
+
+    background: radial-gradient(#e66465, #9198e5);
+    border: 0;
+    color: #fafaf2;
+}
+
+.bottomArea {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+
+    height: 80%;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    text-align: center;
+
+    border-spacing: 0 0;
+}
+
+#deletedItemsInput {
+    width: 100%;
+}
+
+#results {
+    justify-content: center;
+}
+
+#deletedItemsTable {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

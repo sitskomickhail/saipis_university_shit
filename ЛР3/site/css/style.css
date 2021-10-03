@@ -31,6 +31,12 @@ footer {
     justify-content: center;
 }
 
+nav {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
 .main-content {
     display: flex;
     flex-direction: row;
@@ -197,4 +203,11 @@ table, th, tr, td {
 
 .tableRequests {
     padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+
+    color: #738CCE;
 }

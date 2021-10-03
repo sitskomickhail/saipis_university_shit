@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LR4 | Select</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="bgArea">
+    <div id="rotatingBackground"></div>
+</div>
+
+<div class="container">
+    <div id="mainArea">
+        <div class="col-sep">
+            <form id="deleteOptionForm">
+                <select id="optionsList"></select>
+                <button id="deleteButton">Удалить значение из списка</button>
+            </form>
+
+            <form id="addOptionForm">
+                <input type="text" id="optionField" placeholder="Введите новое значение"/>
+                <button type="submit">Добавить значение в список</button>
+            </form>
+        </div>
+        <div class="row-sep">
+            <button id="showButton">Показать таблицу</button>
+        </div>
+    </div>
+
+    <div class="bottomArea">
+        <div id="results" hidden>
+            <table id="deletedItemsTable">
+                <tr>
+                    <th>#</th>
+                    <th>Значение</th>
+                    <th>Позиция</th>
+                    <th>Ключ</th>
+                </tr>
+            </table>
+
+            <input list="deletedItemsDataList" id="deletedItemsInput"/>
+            <datalist id="deletedItemsDataList"></datalist>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/index.js"></script>
+</html>
