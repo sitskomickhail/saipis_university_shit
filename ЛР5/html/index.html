@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<select id="selectInstruments">
+    <option selected>Выберите инструмент</option>
+</select>
+<form id="instrumentForm">
+    <input hidden type="text" id="instrumentId"/>
+
+    <label for="title">Название инструмента</label>
+    <input id="title" type="text"/>
+
+    <label for="purpose">Назначение</label>
+    <input id="purpose" type="text"/>
+
+    <label for="weight">Вес инструмента</label>
+    <input id="weight" type="number" min="1"/>
+
+    <label for="cost">Цена</label>
+    <input id="cost" type="number" min="1"/>
+
+    <button type="submit">Добавить</button>
+</form>
+<button id="deleteCurrentValue" disabled>Удалить выбранное значение</button>
+<button id="manageProps" disabled>Управление свойствами</button>
+<button id="showTableList">Показать/скрыть значения в таблице</button>
+<button id="showMinWeightInstrument">Показать инструмент с наименьшим весом</button>
+<button id="clearFormBtn">Очистить форму</button>
+
+<div class="modalBackground" id="modalWindow">
+    <div class="modalWindow">
+        <button id="closeModal">Закрыть окно</button>
+
+        <label for="newProperty">Наименование свойства</label>
+        <input id="newProperty" type="text" required/>
+
+        <label for="propertyValue">Значение свойства</label>
+        <input id="propertyValue" type="text" required/>
+
+        <button id="addProp">Добавить дополнительное поле</button>
+        <button id="showProps">Показать дополнительные поля</button>
+        <ul id="propertiesList"></ul>
+    </div>
+</div>
+
+<table id="instrumentsTable" style="display: none"></table>
+</body>
+<script src="../js/instrument.js"></script>
+<script src="../js/database.js"></script>
+<script src="../js/template.js"></script>
+</html>

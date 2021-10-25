@@ -12,6 +12,14 @@ body {
     justify-content: center;
 }
 
+.backColor {
+    background: radial-gradient(ellipse at top, #fde69a, transparent), radial-gradient(ellipse at bottom, #cf8ffc, transparent), radial-gradient(ellipse at right, #b8f9fc, transparent), radial-gradient(ellipse at left, #fdabab, transparent);
+    height: 250%;
+    width: 150%;
+    position: fixed;
+    z-index: -2;
+}
+
 #bgArea {
     left: -25%;
     top: -50%;
@@ -21,12 +29,14 @@ body {
 
     position: fixed;
     z-index: -1;
+    background-repeat: repeat;
 }
 
 #rotatingBackground {
     height: 100%;
     width: 100%;
-    background: radial-gradient(ellipse at top, #4585ea, transparent), radial-gradient(ellipse at bottom, #e66465, transparent), radial-gradient(ellipse at right, #ffd12c, transparent), radial-gradient(ellipse at left, #a033ec, transparent);
+
+    background: radial-gradient(ellipse at top, #7cc8ca, transparent), radial-gradient(ellipse at bottom, #f13132, transparent), radial-gradient(ellipse at right, #ffc800, transparent), radial-gradient(ellipse at left, #9700ff, transparent);
 
     animation: rotatingBackground 100s infinite linear;
 }
