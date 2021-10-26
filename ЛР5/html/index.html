@@ -6,31 +6,47 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<select id="selectInstruments">
-    <option selected>Выберите инструмент</option>
-</select>
-<form id="instrumentForm">
-    <input hidden type="text" id="instrumentId"/>
+<div class="mainArea">
 
-    <label for="title">Название инструмента</label>
-    <input id="title" type="text"/>
+    <div class="formArea">
 
-    <label for="purpose">Назначение</label>
-    <input id="purpose" type="text"/>
+        <div class="separatedArea col">
+            <select id="selectInstruments">
+                <option selected>Выберите инструмент</option>
+            </select>
+        </div>
+        <div>
+            <form id="instrumentForm" class="separatedArea col">
+                <input hidden type="text" id="instrumentId"/>
 
-    <label for="weight">Вес инструмента</label>
-    <input id="weight" type="number" min="1"/>
+                <label for="title">Название инструмента</label>
+                <input id="title" type="text" required/>
 
-    <label for="cost">Цена</label>
-    <input id="cost" type="number" min="1"/>
+                <label for="purpose">Назначение</label>
+                <input id="purpose" type="text" required/>
 
-    <button type="submit">Добавить</button>
-</form>
-<button id="deleteCurrentValue" disabled>Удалить выбранное значение</button>
-<button id="manageProps" disabled>Управление свойствами</button>
-<button id="showTableList">Показать/скрыть значения в таблице</button>
-<button id="showMinWeightInstrument">Показать инструмент с наименьшим весом</button>
-<button id="clearFormBtn">Очистить форму</button>
+                <label for="weight">Вес инструмента</label>
+                <input id="weight" type="number" required min="1"/>
+
+                <label for="cost">Цена</label>
+                <input id="cost" type="number" required min="1"/>
+
+                <button type="submit">Добавить</button>
+                <button id="clearFormBtn" type="reset">Очистить форму</button>
+            </form>
+        </div>
+        <div class="separatedArea row">
+            <button id="deleteCurrentValue" class="managingButton" disabled>Удалить выбранное значение</button>
+            <button id="manageProps" class="managingButton" disabled>Управление свойствами</button>
+        </div>
+        <div class="separatedArea col">
+            <button id="showTableList">Показать/скрыть значения в таблице</button>
+            <button id="showMinWeightInstrument">Показать инструмент с наименьшим весом</button>
+        </div>
+
+        <table id="instrumentsTable" style="display: none"></table>
+    </div>
+</div>
 
 <div class="modalBackground" id="modalWindow">
     <div class="modalWindow">
@@ -48,7 +64,6 @@
     </div>
 </div>
 
-<table id="instrumentsTable" style="display: none"></table>
 </body>
 <script src="../js/instrument.js"></script>
 <script src="../js/database.js"></script>

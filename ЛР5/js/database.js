@@ -5,7 +5,7 @@ class Database {
         this.#dbConnection = openDatabase('instrumentsDb', '1.0', 'Instruments DB', 2 * 1024 * 1024);
 
         this.#dbConnection.transaction(function (tx) {
-            tx.executeSql(`CREATE TABLE IF NOT EXISTS INSTRUMENTS (id INTEGER PRIMARY KEY AUTOINCREMENT, name, purpose, weight, cost)`);
+            tx.executeSql(`CREATE TABLE IF NOT EXISTS INSTRUMENTS (id INTEGER PRIMARY KEY AUTOINCREMENT, name, purpose, weight REAL, cost)`);
             // tx.executeSql(`DROP TABLE INSTRUMENTS;`);
         });
     }
@@ -67,10 +67,8 @@ class Database {
 
     deleteInstrumentById(id, callBack) {
         this.#dbConnection.transaction(function (tx) {
-            tx.executeSql('DELETE FROM table_name WHERE id = ?', [id], function (tx, results) {
-
-
-                callBack(instrument);
+            tx.executeSql('DELETE FROM INSTRUMENTS WHERE id = ?', [id], function (tx, results) {
+                callBack();
             });
         });
     }

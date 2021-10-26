@@ -20,7 +20,7 @@ class App {
     }
 
     deleteChoice(instrumentId) {
-        database.deleteInstrumentById(instrumentId, clearForm);
+        database.deleteInstrumentById(instrumentId, reloadAfterDeleting);
     }
 
     showAllInstruments() {
@@ -87,7 +87,7 @@ document.getElementById("instrumentId").addEventListener("change", function () {
     document.getElementById("manageProps").disabled = buttonDisabled;
 })
 
-document.getElementById("deleteCurrentValue", function () {
+document.getElementById("deleteCurrentValue").addEventListener("click", function () {
     const instrumentId = Number.parseInt(document.getElementById("instrumentId").value);
 
     app.deleteChoice(instrumentId);
@@ -139,7 +139,7 @@ function FillCell(newRow, cellIndex, cellValue) {
 
 function showInstrumentsTable(instruments) {
     let table = document.getElementById("instrumentsTable");
-    table.innerHTML = "<tr><th>Id</th><th>Название</th><th>Назначение</th><th>Вес</th><th>Стоимость</th></tr>";
+    table.innerHTML = "<tr><th>Id</th><th>Название</th><th>Назначение</th><th>Вес (г)</th><th>Стоимость (руб.)</th></tr>";
 
     instruments.map((inst, index) => {
         var newRow = table.insertRow(index + 1);
@@ -179,6 +179,11 @@ function fillFormWithObject(instrument) {
     document.getElementById("instrumentId").dispatchEvent(new Event('change'));
 
     app.currentInstrument = instrument;
+}
+
+function reloadAfterDeleting() {
+    app.getValuesForSelectBox();
+    clearForm();
 }
 
 function clearForm() {
