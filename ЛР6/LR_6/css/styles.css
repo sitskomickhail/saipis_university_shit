@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom right, #dfbaff, #d7c894);;
+}
+
+button {
+    width: 100%;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+img {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.btnArea {
+    display: flex;
+    height: 30px;
+    padding: 20px;
+    margin: 0;
+    background-color: #c3b8cf;
+
+}
+
+.mainContent-area {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.buildingArea {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buildingBorder {
+    border: 5px dashed #e2a26a;
+    border-radius: 5px;
+    box-shadow: 3px 2px 10px 1px;
+}
+
+#appendedInput {
+    color: #e2a26a;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
