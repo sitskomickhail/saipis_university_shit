@@ -1,0 +1,22 @@
+{
+  "title": "IPhone OS",
+  "version": "15.0.3",
+  "gadgets": [
+    {
+      "phone": "IPhone 12 Pro Max",
+      "macAddress": "KNI-14921Z924"
+    },
+    {
+      "phone": "IPhone 10",
+      "macAddress": "ZMS-8410052Y35"
+    },
+    {
+      "phone": "IPhone 13 mini",
+      "macAddress": "WSW-84336E97W8"
+    },
+    {
+      "phone": "IPhone 7",
+      "macAddress": "JPO-664715AJ78"
+    }
+  ]
+}

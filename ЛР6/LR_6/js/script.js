@@ -1,5 +1,5 @@
 $("#firstBtn").click(() => {
-    [$(".paragraph2"), $(".paragraph4"), $(".paragraph6")].map(par => par.fadeOut("slow"))
+    [$(".paragraph2"), $(".paragraph4"), $(".paragraph6")].map(par => par.fadeOut(3000))
     $('[id="building_img1"]').toggleClass("buildingBorder");
 });
 

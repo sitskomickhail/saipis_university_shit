@@ -1,0 +1,71 @@
+img {
+    max-height: 150px;
+}
+
+.controlsArea {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #cb9efc;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+button {
+    font-size: 14px;
+    padding: 4px;
+    margin: 0 5px;
+    border: none;
+}
+
+button:hover {
+    background-color: #c4c4c4;
+    cursor: pointer;
+}
+
+.controlsArea > button {
+    width: 25%;
+}
+
+.requestResult {
+    border: 3px solid #cb9efc;
+    border-radius: 5px;
+    margin: 20px 10px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+}
+
+#requestResult {
+    font-size: 18px;
+    font-weight: bold;
+    animation: requestAlert 5s ease-in-out infinite;
+}
+
+@keyframes requestAlert {
+    0% {opacity: 0 }
+    50% {opacity: 100}
+    100% {opacity: 0}
+}
+
+#mainContentArea {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    font-size: 18px;
+}
+
+#osLogo {
+    width: 10%;
+}
+
+#osParams {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#osInfo {
+    margin-left: 20px;
+}

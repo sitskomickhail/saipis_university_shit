@@ -1,0 +1,18 @@
+{
+  "title": "Bada OS",
+  "version": "Bada 2.0",
+  "gadgets": [
+    {
+      "phone": "Samsung Wave 3 S8600",
+      "macAddress": "KCSPWQ-94V"
+    },
+    {
+      "phone": "Samsung S5250 (Wave 525)",
+      "macAddress": "PSXSAD-24W"
+    },
+    {
+      "phone": "Samsung S7250 (Wave M)",
+      "macAddress": "AXAEFK-342"
+    }
+  ]
+}

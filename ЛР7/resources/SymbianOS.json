@@ -1,0 +1,22 @@
+{
+  "title": "Symbian OS",
+  "version": "Symbian Series 60",
+  "gadgets": [
+    {
+      "phone": "Arima U300",
+      "macAddress": "42-DDT"
+    },
+    {
+      "phone": "LG KT610",
+      "macAddress": "732-EEQ"
+    },
+    {
+      "phone": "Nokia 3620",
+      "macAddress": "72-KVP"
+    },
+    {
+      "phone": "Nokia 5500 Sport",
+      "macAddress": "78-NPD"
+    }
+  ]
+}

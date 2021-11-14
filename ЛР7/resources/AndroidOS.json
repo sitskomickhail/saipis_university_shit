@@ -1,0 +1,22 @@
+{
+  "title": "Android OS",
+  "version": "Android 5.0-5.1.1, Lollipop",
+  "gadgets": [
+    {
+      "phone": "Samsung Galaxy Note 10",
+      "macAddress": "PS-21E-21D"
+    },
+    {
+      "phone": "Vivo V20 Pro",
+      "macAddress": "VH-123-F32"
+    },
+    {
+      "phone": "Xiaomi Mi10 Pro",
+      "macAddress": "PO-WQE-28E"
+    },
+    {
+      "phone": "Sony Xperia 1ii",
+      "macAddress": "SQ-KK2-PQW"
+    }
+  ]
+}
