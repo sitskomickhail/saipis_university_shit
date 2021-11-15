@@ -27,6 +27,19 @@ button:hover {
     width: 25%;
 }
 
+.blockArea {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #cb9efc;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.blockArea > button {
+    width: 100%;
+}
+
 .requestResult {
     border: 3px solid #cb9efc;
     border-radius: 5px;

@@ -2,7 +2,7 @@ $(document).ready(function () {
     let loadedDevices = 0;
 
     $("#loadAdditionalInfo").click(function () {
-        $.getJSON("../resources/AndroidOS.json").done(function (androidData) {
+        $.getJSON("../resources/AndroidOSs.json").done(function (androidData) {
             console.log(androidData);
 
             $("#osName").text(`System: ${androidData.title}`);
