@@ -6,16 +6,6 @@ import Form from "./components/formComponent";
 async function saveData(e) {
     e.preventDefault();
 
-    // console.log(e.target.first_name.value)
-    // console.log(e.target.first_surname.value)
-    // console.log(e.target.first_phone.value)
-    // console.log(e.target.first_mail.value)
-    // console.log(e.target.first_man.checked)
-    // console.log(e.target.first_woman.checked)
-    // console.log(e.target.first_skills.value)
-    // console.log(e.target.first_connection_phone.checked)
-    // console.log(e.target.first_connection_mail.checked)
-
     const postData = {
         name: e.target.first_name.value,
         surname: e.target.first_surname.value,
