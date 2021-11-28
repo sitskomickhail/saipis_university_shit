@@ -43,3 +43,11 @@ tbody, td, th {
 .filterElement {
     margin: 15px;
 }
+
+.editMailCol {
+    display: none;
+}
+
+.updateMail {
+    background: gray;
+}

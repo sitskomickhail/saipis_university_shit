@@ -19,6 +19,15 @@ app.get("/api/mail", function (req, res) {
   getMails.getMails(res);
 });
 
+app.get("/api/getMailById", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  const getMailModule = require("./db_modules/getMailById");
+  const mailId = req.query.id;
+
+  getMailModule.getMailById(mailId, res);
+});
+
 app.get("/api/mail/filters", function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
 
@@ -39,7 +48,30 @@ app.post("/api/mail", function (req, res) {
     addMail.createMail(req.body.sender, req.body.reciever, req.body.message, req.body.messageType);
     addMail.insertMail();
     
-    res.send("Success!");
+    res.send("Успешно записано!");
+});
+
+
+app.post("/api/mail/delete", function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  console.log(req.body);
+
+  const deleteModule = require("./db_modules/deleteMail");
+
+  deleteModule.delete(req.body.id);
+  
+  res.send("Успешно удалено!");
+});
+
+app.post("/api/mail/update", function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  console.log(req.body);
+
+  const updagteModule = require("./db_modules/updateMail");
+
+  updagteModule.updateMail(req.body.id, req.body.sender, req.body.reciever, req.body.message, req.body.messageType);
+  
+  res.send("Успешно обновлено!");
 });
 
 app.listen(5000, function () {

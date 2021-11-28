@@ -9,6 +9,7 @@ const getListOfMail = (response) => {
       console.log(doc);
      
       return {
+        "id": doc._id,
         "sender" : doc.sender,
         "reciever" : doc.reciever,
         "message" : doc.message,

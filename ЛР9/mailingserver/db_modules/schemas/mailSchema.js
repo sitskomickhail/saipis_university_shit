@@ -11,7 +11,7 @@ const mailScheme = new Schema({
 });
 
 mongoose.connect("mongodb://localhost:27017/mailsdb", { useUnifiedTopology: true, useNewUrlParser: true });
-var Mail = mongoose.model("Mail", mailScheme);  
+let Mail = mongoose.model("Mail", mailScheme);  
 
 module.exports.Mail = Mail;
 module.exports.mongoose = mongoose;

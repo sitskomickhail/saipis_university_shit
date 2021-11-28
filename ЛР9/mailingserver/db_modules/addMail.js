@@ -17,9 +17,6 @@ const createMail = (sender, reciever, message, messageType) => {
 const insertMailFunction = () => {
     if(mailObject !== undefined) {
       
-      console.log("Test time", new Date());
-      console.log("До сохранения", mailObject);
-
       mailObject.save(function(err){
       
       if(err) return console.log(err);

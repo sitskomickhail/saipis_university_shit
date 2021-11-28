@@ -14,6 +14,7 @@ function MailsList(props) {
         <td>{mail.message}</td>
         <td>{mail.sendDate}</td>
         <td>{mail.messageType}</td>
+        <td className="editMailCol"><button className="editMailBtn" id={mail.id}>Подробнее...</button></td>
       </tr>
     );
   });
@@ -28,6 +29,7 @@ function MailsList(props) {
           <th>Сообщение</th>
           <th>Дата отправки</th>
           <th>Тип сообщения</th>
+          <th className="editMailCol"></th>
         </tr>
       </thead>
       <tbody>
