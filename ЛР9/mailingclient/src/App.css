@@ -1,0 +1,45 @@
+.mainArea {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 97%;
+}
+
+form {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputFormElement {
+    margin: 10px;
+}
+
+.inputElement {
+    width: 100%;
+}
+
+.submitButton {
+    width: 100%;
+}
+
+tbody, td, th {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.mailElement {
+    font-size: 14px;
+}
+
+.filterResult {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterElement {
+    margin: 15px;
+}
